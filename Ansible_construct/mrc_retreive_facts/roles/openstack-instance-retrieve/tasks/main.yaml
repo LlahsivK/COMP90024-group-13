@@ -1,0 +1,9 @@
+---
+  #Retrieve intace
+- name: Retreive into about demo-3
+  os_server_info:
+    server: demo-3
+  register: result
+
+- debug:
+    msg: "{{ result.openstack_servers}}"

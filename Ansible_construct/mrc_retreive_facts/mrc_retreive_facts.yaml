@@ -1,0 +1,15 @@
+- hosts: localhost
+  vars:
+    ansible_python_interpreter: /usr/bin/python3.8
+  vars_files:
+    - host_vars/mrc.yaml
+  gather_facts: true
+
+  roles:
+    - role: openstack-common
+#    - role: openstack-images - dont want to know
+    - role: openstack-volume
+#    - role: openstack-security-group - use existing SG
+    - role: openstack-instance
+    - role: openstack-instance-retrieve
+#    - role: openstack-volume-snapshot
