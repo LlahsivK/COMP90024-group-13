@@ -6,7 +6,7 @@ import twitter_credentials
 class StdOutListener(StreamListener):
 
     def on_status(self, status):
-        print(status.text,status.coordinates)
+        print(status.text,status.place.bounding_box.coordinates)
         return True
 
     def on_error(self, status_code):
