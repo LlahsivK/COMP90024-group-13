@@ -2,6 +2,7 @@ from tweepy.streaming import StreamListener
 from tweepy import Stream
 import tweepy
 import twitter_credentials
+import search_params
 
 class StdOutListener(StreamListener):
 
@@ -17,4 +18,4 @@ if __name__ == "__main__":
     auth = tweepy.OAuthHandler(twitter_credentials.CONSUMER_KEY, twitter_credentials.CONSUMER_SECRET)
     auth.set_access_token(twitter_credentials.ACCESS_TOKEN_KEY, twitter_credentials.ACCESS_TOKEN_SECRET)
     Stream = Stream(auth, listener)
-    Stream.filter(track=["Melbourne"])
+    Stream.filter(locations=search_params.D5, languages=search_params.LANGUAGES, track=search_params.KEY_WORDS)
