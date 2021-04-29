@@ -1,0 +1,134 @@
+---
+#Configuring enb
+- name: Change /etc/environment
+  block:
+    - name: Change privledge
+      command: chmod u+x /etc/environment
+
+    - name: Configure environments
+      lineinfile:
+        path: /etc/environment
+        line: 'HTTP_PROXY=http://wwwproxy.unimelb.edu.au:8000/'
+
+    - name: Configure environments
+      lineinfile:
+        path: /etc/environment
+        line: 'HTTPS_PROXY=http://wwwproxy.unimelb.edu.au:8000/'
+
+    - name: Configure environments
+      lineinfile:
+        path: /etc/environment
+        line: 'https_proxy=http://wwwproxy.unimelb.edu.au:8000/'
+
+    - name: Configure environments
+      lineinfile:
+        path: /etc/environment
+        line: 'http_proxy=http://wwwproxy.unimelb.edu.au:8000/'
+
+    - name: Configure environments
+      lineinfile:
+        path: /etc/environment
+        line: 'no_proxy=localhost,127.0.0.1,localaddress, 172.16.0.0/12,.melbourne.rc.nectar.org.au,.storage.unimelb.edu.au,.cloud.unimelb.edu.au'
+
+# Backend stuff
+# 1. Install docker, docker-compose - DONE
+# 2. Update env of docker - DONE
+# 3. Install nodejs - DONE
+# 4. NPM Install - DONE
+# 5. Use NPM to install grunt cli - DONE
+# 6. Download couchDB:3.1.1 image from docker
+- name: Install and configure Docker
+  block:
+    - name: Docker Install
+      apt:
+        name: ['docker', 'docker-compose']
+        state: latest
+        update_cache: yes
+
+    - name: Make relevant directory
+      command: mkdir -p /etc/systemd/system/docker.service.d
+
+    - name: Create a config file
+      file:
+        path: /etc/systemd/system/docker.service.d/http-proxy.conf
+        state: touch
+
+    - name: Add environments
+      lineinfile:
+        path: /etc/systemd/system/docker.service.d/http-proxy.conf
+        line: '[Service]'
+
+    - name: Add environments
+      lineinfile:
+        path: /etc/systemd/system/docker.service.d/http-proxy.conf
+        line: 'Environment="HTTP_PROXY=http://wwwproxy.unimelb.edu.au:8000/"'
+
+    - name: Add environments
+      lineinfile:
+        path: /etc/systemd/system/docker.service.d/http-proxy.conf
+        line: 'Environment="HTTPS_PROXY=http://wwwproxy.unimelb.edu.au:8000/"'
+
+    - name: Add environments
+      lineinfile:
+        path: /etc/systemd/system/docker.service.d/http-proxy.conf
+        line: 'Environment="http_proxy=http://wwwproxy.unimelb.edu.au:8000/"'
+
+    - name: Add environments
+      lineinfile:
+        path: /etc/systemd/system/docker.service.d/http-proxy.conf
+        line: 'Environment="https_proxy=http://wwwproxy.unimelb.edu.au:8000/"'
+
+    - name: Add environments
+      lineinfile:
+        path: /etc/systemd/system/docker.service.d/http-proxy.conf
+        line: 'Environment="no_proxy=localhost,127.0.0.1,localaddress, 172.16.0.0/12,.melbourne.rc.nectar.org.au,.storage.unimelb.edu.au,.cloud.unimelb.edu.au"'
+
+    - name: Reload deamon
+      command: systemctl daemon-reload
+
+    - name: Restart Docker
+      command: systemctl restart docker
+
+- name: Install nodejs and nodejs dependencies from package manager
+  block:
+    - name: Curl repo
+      command: curl -fsSL https://deb.nodesource.com/setup_16.x
+
+    - name: Install nodejs and npm
+      apt:
+        name: ['nodejs', 'npm']
+        state: latest
+        update_cache: yes
+
+    - name: Install grunt CLI
+      command: npm install -g grunt-cli
+
+    - name: Install jq
+      apt:
+        name: jq
+        state: latest
+        update_cache: yes
+
+    - name: run NPM Install
+      command: npm install
+
+- name: Pull couchDB image from docker
+  command: docker pull ibmcom/couchdb3:3.1.1
+
+#For processing twitter
+- name: Download python and relevant packages
+  block:
+    - name: Install python
+      apt:
+        name: python3.8
+        state: latest
+        update_cache: yes
+
+    - name: Install pip
+      apt:
+        name: python3-pip
+        state: latest
+        update_cache: yes
+
+    - name: Install python packages for processing tweet
+      command: pip3 install numpy pandas nltk tweepy
