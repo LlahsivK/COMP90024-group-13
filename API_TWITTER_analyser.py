@@ -37,6 +37,7 @@ class StdOutListener(StreamListener):
             overall_sentiment = 'negative'
         sentiment_tweet_dict['overall_sentiment'] = overall_sentiment
         sentiment_tweet_dict['box coordinates'] = status.place.bounding_box.coordinates
+        sentiment_tweet_dict['date'] = str(status.created_at)
         write_in(sentiment_tweet_dict)
         return True
 
