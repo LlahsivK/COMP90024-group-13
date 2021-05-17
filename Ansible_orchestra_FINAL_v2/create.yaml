@@ -1,0 +1,28 @@
+# Team 13
+# Tom Koh 329888
+# Alex Lasffre 1161899
+# Vishall Krishnan 1018473
+# Jothe Krishnan 1187902
+# Kwanhyoung Lee 992925
+
+- hosts: localhost
+  vars:
+    ansible_python_interpreter: /usr/bin/python3.8
+  vars_files:
+    - host_vars/mrc.yaml
+  gather_facts: true
+
+  roles:
+    - role: openstack-common
+    - role: openstack-volume
+    - role: openstack-security-group
+    - role: openstack-instance
+
+- hosts: openstack_vms
+  remote_user: ubuntu
+  become: yes
+  become_user: root
+  vars:
+    ansible_ssh_private_key_file: keys/demo.pem
+  roles:
+    - role: openstack-dependencies
