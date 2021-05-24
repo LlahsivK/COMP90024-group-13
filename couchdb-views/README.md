@@ -32,12 +32,14 @@ Eg. {"key":"positive","value":[["bay",189],["denise",189],["robinson",189],["pho
 
 The top ten most frequently used words associated with positive sentiment.
 
+
 Database: final-sentiment
+
 •	Design document: sentiment
 View: average
 
 A mapreduce function that gives the average sentiment value for a location.
-Eg.n{"key":"Ballarat","value":34.53457499999999},
+Eg. {"key":"Ballarat","value":34.53457499999999},
 {"key":"Barwon - West","value":37.06759999999999}
 
 Average sentiment values for Ballarat and Barwon-West.
