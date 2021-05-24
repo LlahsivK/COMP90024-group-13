@@ -47,6 +47,11 @@ The top ten most frequently used words associated with positive sentiment.
 
 
 
+
+
+
+
+
 **Database**: final-sentiment
 
 •	**Design document**: sentiment
