@@ -1,6 +1,7 @@
 **Database**: topten-location
 
 •	**Design document**: locatesent
+
 **View**: locsent
 
 A mapreduce function that finds the top ten most used words in a location, for each sentiment. 
@@ -10,6 +11,7 @@ _Eg. {"key":["Ballarat","positive"],"value":[["budget",38],["great",29],["ride",
 Top ten most common words tweeted from Ballarat with a positive tweet sentiment.
 
 •	**Design document**: location
+
 **View**: loctop
 
 A mapreduce function that finds the top ten most used words for a location.
@@ -19,6 +21,7 @@ Top ten most common words tweeted from Ballarat.
 
 
 •	**Design document**: sentiment
+
 **View**: sentsum
 
 A mapreduce function that finds the number of positive, negative and neutral tweets in a location.
@@ -29,6 +32,7 @@ Count of positive, negative and neutral tweets from Ballarat.
 
 
 •	**Design document**: unique
+
 **View**: sent
 
 A mapreduce function that finds the most common words associated with each sentiment.
@@ -41,6 +45,7 @@ The top ten most frequently used words associated with positive sentiment.
 **Database**: final-sentiment
 
 •	**Design document**: sentiment
+
 **View**: average
 
 A mapreduce function that gives the average sentiment value for a location.
