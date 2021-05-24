@@ -6,7 +6,7 @@
 
 A mapreduce function that finds the top ten most used words in a location, for each sentiment. 
 
-_Eg. {"key":["Ballarat","positive"],"value":[["budget",38],["great",29],["ride",20],["noosa",18],["morrison",17],["back",17],["fire",16],["#actorslife",16],["australia",16],["#ffmvic",15]]}_ 
+	Eg. {"key":["Ballarat","positive"],"value":[["budget",38],["great",29],["ride",20],["noosa",18],["morrison",17],["back",17],["fire",16],["#actorslife",16],["australia",16],["#ffmvic",15]]}
 
 Top ten most common words tweeted from Ballarat with a positive tweet sentiment.
 
@@ -18,7 +18,7 @@ Top ten most common words tweeted from Ballarat with a positive tweet sentiment.
 
 A mapreduce function that finds the top ten most used words for a location.
 
-	<i>Eg. {"key":"Ballarat","value":[["budget",38],["great",29],["ride",20],["noosa",18],["morrison",17],["back",17],["fire",16],["#actorslife",16],["australia",16],["#ffmvic",15]]} </i>
+	Eg. {"key":"Ballarat","value":[["budget",38],["great",29],["ride",20],["noosa",18],["morrison",17],["back",17],["fire",16],["#actorslife",16],["australia",16],["#ffmvic",15]]}
 
 Top ten most common words tweeted from Ballarat.
 
@@ -30,7 +30,7 @@ Top ten most common words tweeted from Ballarat.
 
 A mapreduce function that finds the number of positive, negative and neutral tweets in a location.
 
-	<i>Eg .{"key":"Ballarat","value":{"negative":0,"neutral":0,"positive":4}}</i>
+	Eg .{"key":"Ballarat","value":{"negative":0,"neutral":0,"positive":4}}
 	
 Count of positive, negative and neutral tweets from Ballarat.
 
