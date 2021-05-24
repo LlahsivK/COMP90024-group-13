@@ -1,13 +1,13 @@
-Most tweeted words in a location
+**Most tweeted words in a location**
 
-Map
+**Map**
 ```
 function (doc) {
   emit(doc.location, doc.most_common);
 }
 ```
 
-Reduce
+**Reduce**
 ```
 function (keys, values, rereduce) {
   var merged = [];
