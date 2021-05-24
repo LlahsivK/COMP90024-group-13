@@ -42,7 +42,7 @@ Count of positive, negative and neutral tweets from Ballarat.
 
 A mapreduce function that finds the most common words associated with each sentiment.
 
-<i>Eg. {"key":"positive","value":[["bay",189],["denise",189],["robinson",189],["photo",186],["cowall",182],["daily",182],["#turningplasterintowow",179],["#distinctlydifferent",171],["#cartoon",163],["#marketing",162]]}</i>
+	Eg. {"key":"positive","value":[["bay",189],["denise",189],["robinson",189],["photo",186],["cowall",182],["daily",182],["#turningplasterintowow",179],["#distinctlydifferent",171],["#cartoon",163],["#marketing",162]]}
 
 The top ten most frequently used words associated with positive sentiment.
 
@@ -57,8 +57,7 @@ The top ten most frequently used words associated with positive sentiment.
 
 A mapreduce function that gives the average sentiment value for a location.
 
-<i>Eg. {"key":"Ballarat","value":34.53457499999999},
-{"key":"Barwon - West","value":37.06759999999999}</i>
+	Eg. {"key":"Ballarat","value":34.53457499999999}, {"key":"Barwon - West","value":37.06759999999999}
 
 Average sentiment values for Ballarat and Barwon-West.
 </p>
