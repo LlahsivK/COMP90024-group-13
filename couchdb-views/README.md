@@ -1,7 +1,7 @@
-<h1>**Database**: topten-location</h1>
+<h1><b>Database:</b> topten-location</h1>
 
-•	**Design document**: locatesent
-
+<h3>•	<b>Design document</b>: locatesent</h3>
+<p>
 **View**: locsent
 
 A mapreduce function that finds the top ten most used words in a location, for each sentiment. 
@@ -9,7 +9,7 @@ A mapreduce function that finds the top ten most used words in a location, for e
 _Eg. {"key":["Ballarat","positive"],"value":[["budget",38],["great",29],["ride",20],["noosa",18],["morrison",17],["back",17],["fire",16],["#actorslife",16],["australia",16],["#ffmvic",15]]}_ 
 
 Top ten most common words tweeted from Ballarat with a positive tweet sentiment.
-
+<p>
 
 
 •	**Design document**: location
