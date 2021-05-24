@@ -38,7 +38,7 @@ Count of positive, negative and neutral tweets from Ballarat.
 
 <h3>•	<b>Design document</b>: unique</h3>
 
-</b>View</b>: sent
+<b>View</b>: sent
 
 A mapreduce function that finds the most common words associated with each sentiment.
 
