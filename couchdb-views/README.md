@@ -1,5 +1,5 @@
 <h1><b>Database:</b> topten-location</h1>
-
+<ul>
 <h3>•	<b>Design document</b>: locatesent</h3>
 <p>
 <b>View</b>: locsent
@@ -45,12 +45,12 @@ A mapreduce function that finds the most common words associated with each senti
 	Eg. {"key":"positive","value":[["bay",189],["denise",189],["robinson",189],["photo",186],["cowall",182],["daily",182],["#turningplasterintowow",179],["#distinctlydifferent",171],["#cartoon",163],["#marketing",162]]}
 
 The top ten most frequently used words associated with positive sentiment.
-
+</ul>
 
 
 
 <h1><b>Database</b>: final-sentiment</h1>
-
+<ul>
 <h3>•	<b>Design document</b>: sentiment</h3>
 
 <b>View</b>: average
@@ -60,6 +60,7 @@ A mapreduce function that gives the average sentiment value for a location.
 	Eg. {"key":"Ballarat","value":34.53457499999999}, {"key":"Barwon - West","value":37.06759999999999}
 
 Average sentiment values for Ballarat and Barwon-West.
+</ul>
 </p>
 
 	
