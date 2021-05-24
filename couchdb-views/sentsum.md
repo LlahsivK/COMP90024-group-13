@@ -1,4 +1,4 @@
-**Number of postive, negatice, neutral tweets in each location**
+**Number of positive, negative, neutral tweets in each location**
 
 **Map**
 ```
