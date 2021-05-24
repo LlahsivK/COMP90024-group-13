@@ -1,5 +1,5 @@
-**Most tweeted words in a location, for each sentiment
-**
+**Most tweeted words in a location, for each sentiment**
+
 **Map**
 ```
 function (doc) {
